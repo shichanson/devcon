@@ -1,0 +1,31 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/go
+{
+  "name": "devcon",
+  "dockerFile": "Dockerfile",
+  "context": ".",
+  // "runArgs": ["--init"],
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.shell.linux": "/bin/zsh",
+        "editor.formatOnSave": true
+      }
+    },
+    "extensions": [
+      "dbaeumer.vscode-eslint",
+      "esbenp.prettier-vscode"
+    ]
+  },
+  "postCreateCommand": "go version",
+  "remoteUser": "root",
+  "mounts": [
+  ],
+  "forwardPorts": [
+    80
+  ],
+  "remoteEnv": {
+    "name": "devcon"
+  },
+  "containerUser": "root"
+}
